@@ -1,0 +1,4 @@
+{
+  "repo_name": "reponame",
+  "_copy_without_render": [".src/*", "./test/*"]
+}
