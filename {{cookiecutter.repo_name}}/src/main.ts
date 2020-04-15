@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 import 'source-map-support/register'
 import * as cdk from '@aws-cdk/core'
-import MyStack from './myStack'
+import {{cookiecutter.stack_name}} from './{{cookiecutter.stack_name}}'
 
 const app = new cdk.App()
 
-new MyStack(app, 'my-stack', {
-  env: {
-    region: 'us-west-2',
-    account: '<ACCOUNT>',
-  },
-})
+try {
+  new {{cookiecutter.stack_name}}(app, '{{cookiecutter.repo_name}}', {})
+} catch (e) {
+  console.log(e)
+}

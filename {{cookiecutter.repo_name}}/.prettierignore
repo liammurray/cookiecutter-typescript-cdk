@@ -1,6 +1,5 @@
-/dist/
-/node_modules/
-.markdownlint.json
-.nyc_output
-.serverless
+dist/
+node_modules/
+.nyc_output/
+
 package-lock.json

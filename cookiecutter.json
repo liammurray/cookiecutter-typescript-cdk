@@ -1,4 +1,5 @@
 {
-  "repo_name": "reponame",
+  "repo_name": "stack",
+  "stack_name": "MyStack",
   "_copy_without_render": [".src/*", "./test/*"]
 }
