@@ -1,6 +1,5 @@
 {
-  "name": "cdktest",
-  "author": "{{ cookiecutter.repo_author }}",
+  "name": "{{ cookiecutter.repo_name ]}",
   "version": "0.1.0",
   "bin": {
     "infra": "src/main.js"
