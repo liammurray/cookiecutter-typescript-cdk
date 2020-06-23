@@ -21,6 +21,7 @@ no-multiple-blanks:
   maximum: 1
 line-length: false
 commands-show-output: true
+code-block-style: fenced
 no-missing-space-atx: true
 no-multiple-space-atx: true
 no-missing-space-closed-atx: true

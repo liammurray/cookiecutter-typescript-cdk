@@ -1,16 +1,35 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert'
+import { expect as cdkExpect, haveResource, MatchStyle, matchTemplate } from '@aws-cdk/assert'
+import { SynthUtils } from '@aws-cdk/assert'
+
 import * as cdk from '@aws-cdk/core'
 import {{cookiecutter.stack_name}} from '../src/{{cookiecutter.stack_name}}'
 
-test('Empty Stack', () => {
-  const app = new cdk.App()
-  const stack = new {{cookiecutter.stack_name}}(app, 'test-stack', {})
-  expectCDK(stack).to(
-    matchTemplate(
-      {
-        Resources: {},
-      },
-      MatchStyle.EXACT
+describe('Build pipeline stack', () => {
+  let stack: {{cookiecutter.stack_name}}
+
+  beforeAll(() => {
+    const app = new cdk.App()
+
+    stack = new {{cookiecutter.stack_name}}(app, 'test-stack')
+  })
+  xtest('Matches snapshot', () => {
+    expect(SynthUtils.toCloudFormation(stack)).toMatchSnapshot()
+  })
+  xtest('Has resources', () => {
+    cdkExpect(stack).to(
+      haveResource('AWS::CodePipeline::Pipeline', {
+        Name: '',
+      })
     )
-  )
+  })
+  test('Match resources', () => {
+    cdkExpect(stack).to(
+      matchTemplate(
+        {
+          Resources: {},
+        },
+        MatchStyle.EXACT
+      )
+    )
+  })
 })

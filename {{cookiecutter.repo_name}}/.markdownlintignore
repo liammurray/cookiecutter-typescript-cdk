@@ -1,4 +1,4 @@
 # markdownlint-cli
 node_modules/
 dist/
-lambda/
+cdk.out/
